@@ -33,7 +33,7 @@ async def moderate_content(request: ModerationRequest):
     try:
         result = await _service.moderate_content(request)
         processing_time = (time.time() - start_time) * 1000
-
+        
         return ModerationResponse(
             video_id=request.video_id,
             moderation=result,

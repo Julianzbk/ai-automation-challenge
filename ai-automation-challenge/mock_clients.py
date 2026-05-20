@@ -15,6 +15,9 @@ class MockCategoryScores:
         self.sexual = scores.get("sexual", 0.01)
         self.spam = scores.get("spam", 0.01)
 
+    def __iter__(self):
+        return iter(vars(self))
+
 
 class MockModerationResult:
     """

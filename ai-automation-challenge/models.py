@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field, validator
-from typing import Optional, List
+from typing import Optional, List, Dict
 from enum import Enum
 
 class ViolationType(str, Enum):
@@ -20,6 +20,7 @@ class ModerationResult(BaseModel):
     is_safe: bool
     confidence: float = Field(..., ge=0.0, le=1.0)
     violation_type: ViolationType
+    flagged_categories: Dict[str, float] = Field(default_factory=dict)
     reasoning: str
     provider: str  # "openai" or "anthropic"
 
