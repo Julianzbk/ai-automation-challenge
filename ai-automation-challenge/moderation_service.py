@@ -22,7 +22,7 @@ class ModerationService:
         self.hate_threshold = 0.38 - EPSILON
         self.violence_threshold = 0.72 + EPSILON
         self.sexual_threshold = 0.68 + EPSILON
-        self.spam_threshold = 0.41 - EPSILON
+        self.spam_threshold = 0.42 - EPSILON
 
     async def moderate_content(self, request: ModerationRequest) -> ModerationResult:
         """Moderate content using OpenAI."""
